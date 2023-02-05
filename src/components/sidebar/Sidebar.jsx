@@ -13,7 +13,7 @@ import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({setDark}) => {
   return (
     <div className="sidebar">
       <div className="top">
@@ -87,8 +87,8 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="bottom">
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
+        <div className="colorOption" onClick={()=>{setDark(false)}}></div>
+        <div className="colorOption" onClick={()=>{setDark(true)}}></div>
       </div>
     </div>
   );

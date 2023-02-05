@@ -2,12 +2,13 @@ import "./navbar.scss";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlined";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 
-const Navbar = () => {
+const Navbar = ({dark, setDark}) => {
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -20,8 +21,13 @@ const Navbar = () => {
             <LanguageOutlinedIcon />
             English
           </div>
-          <div className="item">
-            <DarkModeOutlinedIcon />
+          <div
+            className="item"
+            onClick={() => {
+              setDark(!dark);
+            }}
+          >
+            {dark ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}
           </div>
           <div className="item">
             <FullscreenExitOutlinedIcon />
