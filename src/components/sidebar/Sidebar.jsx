@@ -12,8 +12,11 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
-const Sidebar = ({setDark}) => {
+const Sidebar = () => {
+  const { setDark } = useContext(ThemeContext);
   return (
     <div className="sidebar">
       <div className="top">
@@ -87,8 +90,18 @@ const Sidebar = ({setDark}) => {
         </ul>
       </div>
       <div className="bottom">
-        <div className="colorOption" onClick={()=>{setDark(false)}}></div>
-        <div className="colorOption" onClick={()=>{setDark(true)}}></div>
+        <div
+          className="colorOption"
+          onClick={() => {
+            setDark(false);
+          }}
+        ></div>
+        <div
+          className="colorOption"
+          onClick={() => {
+            setDark(true);
+          }}
+        ></div>
       </div>
     </div>
   );

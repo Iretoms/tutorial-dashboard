@@ -7,8 +7,11 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
-const Navbar = ({dark, setDark}) => {
+const Navbar = () => {
+  const { dark, setDark } = useContext(ThemeContext);
   return (
     <div className="navbar">
       <div className="wrapper">

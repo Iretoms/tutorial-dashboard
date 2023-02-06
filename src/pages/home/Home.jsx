@@ -6,12 +6,12 @@ import Chart from "../../components/chart/Chart";
 import List from "../../components/table/Table";
 import "./home.scss";
 
-const Home = ({ dark, setDark }) => {
+const Home = () => {
   return (
     <div className="home">
-      <Sidebar setDark={setDark} />
+      <Sidebar />
       <div className="homeContainer">
-        <Navbar dark={dark} setDark={setDark} />
+        <Navbar />
         <div className="widgets">
           <Widget type="user" />
           <Widget type="order" />

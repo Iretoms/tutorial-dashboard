@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import List from "./pages/list/List";
@@ -7,14 +7,15 @@ import New from "./pages/new/New";
 import Single from "./pages/single/Single";
 import { userInputs, productInputs } from "./formSource";
 import "./style/dark.scss";
+import { ThemeContext } from "./context/ThemeContext";
 
 function App() {
-  const [dark, setDark] = useState(false);
+  const { dark } = useContext(ThemeContext);
   return (
     <div className={dark ? "app dark" : "app"}>
       <Routes>
         <Route path="/">
-          <Route index element={<Home dark={dark} setDark={setDark} />} />
+          <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="users">
             <Route index element={<List />} />
